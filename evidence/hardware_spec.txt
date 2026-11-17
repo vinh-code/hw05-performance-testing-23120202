@@ -1,0 +1,109 @@
+2026-11-17T23:24:37+07:00
+ Static hostname: Vinh
+       Icon name: computer-laptop
+         Chassis: laptop 💻
+      Machine ID: 7519c348a0c84bb990c7040a6c399972
+         Boot ID: 7d82ff67eba74a8a843d0e0ab3f0415e
+Operating System: Ubuntu 24.04.5 LTS
+          Kernel: Linux 7.0.0-43-generic
+    Architecture: x86-64
+ Hardware Vendor: Micro-Star International Co., Ltd.
+  Hardware Model: Cyborg 15 A12VF
+Firmware Version: E15K1IMS.315
+   Firmware Date: Thu 2024-09-19
+    Firmware Age: 2y 1month 4w
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           39 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  16
+On-line CPU(s) list:                     0-15
+Vendor ID:                               GenuineIntel
+Model name:                              12th Gen Intel(R) Core(TM) i7-12650H
+CPU family:                              6
+Model:                                   154
+Thread(s) per core:                      2
+Core(s) per socket:                      10
+Socket(s):                               1
+Stepping:                                3
+CPU(s) scaling MHz:                      81%
+CPU max MHz:                             4700.0000
+CPU min MHz:                             400.0000
+BogoMIPS:                                5376.00
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb intel_pt sha_ni xsaveopt xsavec xgetbv1 xsaves split_lock_detect user_shstk avx_vnni dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req hfi vnmi umip pku ospke waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize arch_lbr ibt flush_l1d arch_capabilities
+Virtualization:                          VT-x
+L1d cache:                               416 KiB (10 instances)
+L1i cache:                               448 KiB (10 instances)
+L2 cache:                                9.5 MiB (7 instances)
+L3 cache:                                24 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-15
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Not affected
+Vulnerability Reg file data sampling:    Mitigation; Clear Register File
+Vulnerability Retbleed:                  Not affected
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspace
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi         9Gi       648Mi       1.1Gi       6.2Gi       5.4Gi
+Swap:          4.0Gi          0B       4.0Gi
+NAME          SIZE TYPE FSTYPE   MOUNTPOINTS
+loop0           4K loop squashfs /snap/bare/5
+loop1        55.5M loop squashfs /snap/core18/2999
+loop2        63.8M loop squashfs /snap/core20/2866
+loop3        63.8M loop squashfs /snap/core20/2922
+loop4          74M loop squashfs /snap/core22/2955
+loop5        55.5M loop squashfs /snap/core18/3084
+loop6        66.8M loop squashfs /snap/core24/1643
+loop7        66.8M loop squashfs /snap/core24/2124
+loop8          74M loop squashfs /snap/core22/2987
+loop9       274.7M loop squashfs /snap/discord/318
+loop10      274.2M loop squashfs /snap/discord/320
+loop11      157.5M loop squashfs /snap/dvc/1527
+loop12      157.8M loop squashfs /snap/dvc/1532
+loop13      261.3M loop squashfs /snap/firefox/8929
+loop14      261.4M loop squashfs /snap/firefox/8969
+loop15       12.7M loop squashfs /snap/firmware-updater/262
+loop16       12.7M loop squashfs /snap/firmware-updater/258
+loop17      531.4M loop squashfs /snap/gnome-42-2204/247
+loop18      531.5M loop squashfs /snap/gnome-42-2204/263
+loop19      606.1M loop squashfs /snap/gnome-46-2404/153
+loop20       91.7M loop squashfs /snap/gtk-common-themes/1535
+loop21       13.4M loop squashfs /snap/kubectl/3855
+loop22       13.4M loop squashfs /snap/kubectl/3869
+loop23        395M loop squashfs /snap/mesa-2404/1165
+loop24        402M loop squashfs /snap/mesa-2404/1839
+loop25      174.4M loop squashfs /snap/postman/360
+loop26       11.6M loop squashfs /snap/snap-store/1468
+loop27       11.7M loop squashfs /snap/snap-store/1489
+loop28       44.7M loop squashfs /snap/snapd/28254
+loop29       32.5M loop squashfs /snap/snapd/28332
+loop30        828K loop squashfs /snap/snapd-desktop-integration/387
+loop31        828K loop squashfs /snap/snapd-desktop-integration/391
+loop32      222.9M loop squashfs /snap/thunderbird/1299
+loop33      222.9M loop squashfs /snap/thunderbird/1312
+nvme0n1     476.9G disk          
+├─nvme0n1p1   300M part vfat     /boot/efi
+├─nvme0n1p2   128M part          
+├─nvme0n1p3   254G part ntfs     
+├─nvme0n1p4    20G part ntfs     
+├─nvme0n1p5   180G part ext4     /
+├─nvme0n1p6   900M part ntfs     
+└─nvme0n1p7  21.6G part ntfs     
+openjdk version "25.0.5.0.3" 2026-10-24
+OpenJDK Runtime Environment (build 25.0.5.0.3+1-1-24.04.1-Ubuntu)
+OpenJDK 64-Bit Server VM (build 25.0.5.0.3+1-1-24.04.1-Ubuntu, mixed mode, sharing)
+v24.18.0

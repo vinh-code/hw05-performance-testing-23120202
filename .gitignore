@@ -1,0 +1,10 @@
+sut/
+2026.HW05.Performance Testing_En.pdf
+HW05_CHON_WORKFLOW.pdf
+results/*.jtl
+results/**/*.jtl
+html-reports/*/
+logs/*.log
+*.zip
+.DS_Store
+
