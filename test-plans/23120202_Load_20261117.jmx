@@ -18,6 +18,7 @@
         <stringProp name="HTTPSampler.response_timeout">10000</stringProp>
       </ConfigTestElement>
       <hashTree/>
+
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Load – Flow 4 Profile Purchase">
         <stringProp name="ThreadGroup.num_threads">${__P(threads,20)}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">${__P(ramp,120)}</stringProp>
@@ -394,8 +395,9 @@
           <hashTree/>
         </hashTree>
         </hashTree>
-        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
+      </hashTree>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
             <value class="SampleSaveConfiguration">
@@ -409,10 +411,9 @@
               <idleTime>true</idleTime><connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename"></stringProp>
-        </ResultCollector>
-        <hashTree/>
-      </hashTree>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
     </hashTree>
   </hashTree>
 </jmeterTestPlan>

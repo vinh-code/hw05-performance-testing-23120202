@@ -42,10 +42,12 @@ Thông số khởi đầu, phải điều chỉnh sau baseline:
 ```bash
 ./scripts/run_scenario.sh load 20 120 300 official
 ./scripts/run_scenario.sh stress 60 180 360 official
-./scripts/run_scenario.sh spike 80 2 120 official
+./scripts/run_scenario.sh spike 80 2 180 official
 ```
 
 Ý nghĩa tham số: `scenario threads ramp_seconds duration_seconds run_label`.
+
+Riêng Spike, `duration` là tổng thời gian baseline. Mặc định burst bắt đầu tại giây 60, kéo dài 30 giây, sau đó baseline tiếp tục để đo phục hồi. Có thể hiệu chỉnh bằng `BASELINE_THREADS`, `SPIKE_DELAY` và `SPIKE_DURATION`.
 
 Mở `htop` cạnh terminal chạy JMeter và quay/chụp cùng một khung hình. Chạy từng scenario riêng, kiểm tra backend còn hoạt động giữa các lần chạy.
 

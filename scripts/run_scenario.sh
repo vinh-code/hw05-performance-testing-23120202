@@ -46,6 +46,10 @@ fi
   -Jduration="$duration" \
   -Jthink_base_ms="${THINK_BASE_MS:-300}" \
   -Jthink_random_ms="${THINK_RANDOM_MS:-700}" \
+  -Jbaseline_threads="${BASELINE_THREADS:-5}" \
+  -Jbaseline_ramp="${BASELINE_RAMP:-5}" \
+  -Jspike_delay="${SPIKE_DELAY:-60}" \
+  -Jspike_duration="${SPIKE_DURATION:-30}" \
   -Jcsv_path="$project_dir/test-data/users.csv"
 
 echo "JTL: $jtl"

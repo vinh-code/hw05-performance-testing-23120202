@@ -128,6 +128,67 @@ function saveConfig() {
           </objProp>`;
 }
 
+function threadGroupBlock({ testName, threads, ramp, duration, delay = "0", flow }) {
+  return `
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${testName}">
+        <stringProp name="ThreadGroup.num_threads">${threads}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${ramp}</stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <intProp name="LoopController.loops">-1</intProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">${duration}</stringProp>
+        <stringProp name="ThreadGroup.delay">${delay}</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV user and workflow data">
+          <stringProp name="filename">\${__P(csv_path,test-data/users.csv)}</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP headers">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="Content-Type" elementType="Header"><stringProp name="Header.name">Content-Type</stringProp><stringProp name="Header.value">application/json</stringProp></elementProp>
+            <elementProp name="Accept" elementType="Header"><stringProp name="Header.name">Accept</stringProp><stringProp name="Header.value">application/json</stringProp></elementProp>
+            <elementProp name="Authorization" elementType="Header"><stringProp name="Header.name">Authorization</stringProp><stringProp name="Header.value">Bearer \${token}</stringProp></elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Pin one CSV row to each VU"/>
+        <hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Copy CSV values to stable VU variables">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">['email','password','name','phone','address','keyword'].each { key -&gt; vars.put('vu_' + key, vars.get(key)) }; SampleResult.setIgnore()</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Flow 4 – Profile Purchase">
+          <boolProp name="TransactionController.parent">false</boolProp>
+          <boolProp name="TransactionController.includeTimers">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Think time 300–1000 ms">
+            <stringProp name="ConstantTimer.delay">\${__P(think_base_ms,300)}</stringProp>
+            <stringProp name="RandomTimer.range">\${__P(think_random_ms,700)}</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>${flow}
+        </hashTree>
+      </hashTree>`;
+}
+
 function buildPlan(scenario) {
   const flow = [
     sampler({
@@ -177,6 +238,32 @@ function buildPlan(scenario) {
     sampler({ name: "08 Order detail", method: "GET", requestPath: "/api/orders/${order_id}", assertions: [{ text: '"id"', name: "Assert order detail" }] }),
   ].join("");
 
+  const groups = scenario.type === "Spike"
+    ? [
+        threadGroupBlock({
+          testName: "Spike baseline and recovery – Flow 4",
+          threads: "${__P(baseline_threads,5)}",
+          ramp: "${__P(baseline_ramp,5)}",
+          duration: "${__P(duration,180)}",
+          flow,
+        }),
+        threadGroupBlock({
+          testName: "Spike burst – Flow 4",
+          threads: "${__P(threads,80)}",
+          ramp: "${__P(ramp,2)}",
+          delay: "${__P(spike_delay,60)}",
+          duration: "${__P(spike_duration,30)}",
+          flow,
+        }),
+      ].join("")
+    : threadGroupBlock({
+        testName: `${scenario.type} – Flow 4 Profile Purchase`,
+        threads: `\${__P(threads,${scenario.threads})}`,
+        ramp: `\${__P(ramp,${scenario.ramp})}`,
+        duration: `\${__P(duration,${scenario.duration})}`,
+        flow,
+      });
+
   return `<?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
   <hashTree>
@@ -197,68 +284,12 @@ function buildPlan(scenario) {
         <stringProp name="HTTPSampler.response_timeout">10000</stringProp>
       </ConfigTestElement>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="${scenario.type} – Flow 4 Profile Purchase">
-        <stringProp name="ThreadGroup.num_threads">\${__P(threads,${scenario.threads})}</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">\${__P(ramp,${scenario.ramp})}</stringProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
-          <intProp name="LoopController.loops">-1</intProp>
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-        </elementProp>
-        <boolProp name="ThreadGroup.scheduler">true</boolProp>
-        <stringProp name="ThreadGroup.duration">\${__P(duration,${scenario.duration})}</stringProp>
-        <stringProp name="ThreadGroup.delay">0</stringProp>
-      </ThreadGroup>
-      <hashTree>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV user and workflow data">
-          <stringProp name="filename">\${__P(csv_path,test-data/users.csv)}</stringProp>
-          <stringProp name="fileEncoding">UTF-8</stringProp>
-          <stringProp name="variableNames"></stringProp>
-          <boolProp name="ignoreFirstLine">true</boolProp>
-          <stringProp name="delimiter">,</stringProp>
-          <boolProp name="quotedData">false</boolProp>
-          <boolProp name="recycle">true</boolProp>
-          <boolProp name="stopThread">false</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
-        </CSVDataSet>
-        <hashTree/>
-        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP headers">
-          <collectionProp name="HeaderManager.headers">
-            <elementProp name="Content-Type" elementType="Header"><stringProp name="Header.name">Content-Type</stringProp><stringProp name="Header.value">application/json</stringProp></elementProp>
-            <elementProp name="Accept" elementType="Header"><stringProp name="Header.name">Accept</stringProp><stringProp name="Header.value">application/json</stringProp></elementProp>
-            <elementProp name="Authorization" elementType="Header"><stringProp name="Header.name">Authorization</stringProp><stringProp name="Header.value">Bearer \${token}</stringProp></elementProp>
-          </collectionProp>
-        </HeaderManager>
-        <hashTree/>
-        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Pin one CSV row to each VU"/>
-        <hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Copy CSV values to stable VU variables">
-            <stringProp name="scriptLanguage">groovy</stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">['email','password','name','phone','address','keyword'].each { key -&gt; vars.put('vu_' + key, vars.get(key)) }; SampleResult.setIgnore()</stringProp>
-          </JSR223Sampler>
-          <hashTree/>
-        </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Flow 4 – Profile Purchase">
-          <boolProp name="TransactionController.parent">false</boolProp>
-          <boolProp name="TransactionController.includeTimers">true</boolProp>
-        </TransactionController>
-        <hashTree>
-          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Think time 300–1000 ms">
-            <stringProp name="ConstantTimer.delay">\${__P(think_base_ms,300)}</stringProp>
-            <stringProp name="RandomTimer.range">\${__P(think_random_ms,700)}</stringProp>
-          </UniformRandomTimer>
-          <hashTree/>${flow}
-        </hashTree>
-        <ResultCollector guiclass="${scenario.listenerClass}" testclass="ResultCollector" testname="${scenario.listenerName}" enabled="true">
-          <boolProp name="ResultCollector.error_logging">${scenario.errorsOnly}</boolProp>${saveConfig()}
-          <stringProp name="filename"></stringProp>
-        </ResultCollector>
-        <hashTree/>
-      </hashTree>
+${groups}
+      <ResultCollector guiclass="${scenario.listenerClass}" testclass="ResultCollector" testname="${scenario.listenerName}" enabled="true">
+        <boolProp name="ResultCollector.error_logging">${scenario.errorsOnly}</boolProp>${saveConfig()}
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
     </hashTree>
   </hashTree>
 </jmeterTestPlan>

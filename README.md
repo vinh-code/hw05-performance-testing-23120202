@@ -5,7 +5,7 @@
 - Workflow: Flow 4 – Cập nhật hồ sơ → Mua
 - SUT: EShop backend API
 - Công cụ chính: Apache JMeter 5.6.3
-- Trạng thái hiện tại: đã dựng cấu trúc và test plan; kết quả chính thức chưa chạy
+- Trạng thái hiện tại: ba test plan đã qua smoke/structure check; kết quả chính thức chưa chạy
 
 ## Workflow API
 
@@ -39,8 +39,8 @@ node server.js
 | Hạng mục | Trạng thái |
 |---|---|
 | Load plan | Đã tạo, chờ chạy chính thức |
-| Stress plan | Đã tạo, chờ hiệu chỉnh và chạy chính thức |
-| Spike plan | Đã tạo, chờ hiệu chỉnh và chạy chính thức |
+| Stress plan | Đã tạo và kiểm tra kỹ thuật, chờ hiệu chỉnh tải và chạy chính thức |
+| Spike plan | Đã tạo baseline–burst–recovery và kiểm tra kỹ thuật, chờ chạy chính thức |
 | Endurance | Chưa chạy |
 | Resource screenshots | Chưa chụp |
 | Demo video | Chưa quay |

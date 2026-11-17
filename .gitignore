@@ -5,6 +5,7 @@ results/*.jtl
 results/**/*.jtl
 html-reports/*/
 logs/*.log
+jmeter.log
 *.zip
 .DS_Store
 

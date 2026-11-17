@@ -27,7 +27,7 @@ CSV cung cấp tài khoản, thông tin hồ sơ và từ khóa tìm kiếm. M�
 |---|---:|---:|---:|---|
 | Load | 20 | 120 giây | 300 giây | Summary Report |
 | Stress | 60 | 180 giây | 360 giây | Aggregate Report |
-| Spike | 80 | 2 giây | 120 giây | View Results Tree, chỉ lưu lỗi |
+| Spike | baseline 5, burst 80 | burst ramp 2 giây | baseline 180 giây; burst từ giây 60–90 | View Results Tree, chỉ lưu lỗi |
 
 Đây là giả thuyết thiết kế, không phải ngưỡng đã xác nhận. Sau smoke/baseline phải hiệu chỉnh theo phần cứng thực tế.
 
@@ -39,4 +39,5 @@ CSV cung cấp tài khoản, thông tin hồ sơ và từ khóa tìm kiếm. M�
 4. View Results Tree tiêu thụ tài nguyên, vì vậy chỉ cấu hình lưu lỗi và không dùng nó để đọc toàn bộ response trong lần chạy lớn.
 5. Thông số thread chỉ là điểm bắt đầu. Ngưỡng ổn định phải lấy từ raw JTL và resource monitor.
 6. Backend reset database khi restart nên seed dữ liệu là bước bắt buộc và phải được ghi trong bằng chứng chạy.
+7. Spike phải có ba vùng quan sát: baseline trước spike, burst đột ngột và baseline sau spike để đánh giá phục hồi. Một thread group chỉ tăng tải rồi dừng là chưa đủ.
 
