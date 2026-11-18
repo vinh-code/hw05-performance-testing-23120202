@@ -20,7 +20,23 @@ Mỗi interaction phải chứa tên công cụ, thời gian, prompt nguyên vă
 - Date: 2026-11-17
 - Prompt: `ok bắt đầu làm giúp tôi`
 - Output: AI kiểm tra mã nguồn EShop, dựng bộ khung báo cáo, dữ liệu, test plans và scripts chạy.
-- Human review: `TBD sau khi xem diff và chạy smoke test.`
+- Human review: Ba plan đã được smoke test. Spike được sửa thành baseline–burst–recovery; CSV được mở rộng và assertion/correlation được xác nhận bằng raw JTL.
+
+## Interaction 003
+
+- Tool: OpenAI Codex
+- Date: 2026-11-18
+- Prompt: `giải thích đề giúp tôi`
+- Output: AI giải thích lại Task 1–3, Agent Skill, AI Audit, AI Critique và checklist ZIP.
+- Human review: Không tạo thay đổi kỹ thuật; sinh viên xác nhận tiếp tục workflow.
+
+## Interaction 004
+
+- Tool: OpenAI Codex
+- Date: 2026-11-18
+- Prompt: `ok bạn thực hiện tiếp giúp tôi đi`
+- Output: AI chạy Load, Stress, Spike và ba mức Endurance; thu raw JTL/HTML/resource logs; tạo script phân tích, Agent Skill, report và AI critique.
+- Human review: Số liệu được tính lại từ raw JTL. Kết luận được sửa để phân biệt highest verified stable level với maximum tuyệt đối, HTML percentile window với exact whole-run percentile, và root cause với hypothesis.
 
 > Trước khi nộp phải bổ sung toàn bộ output/prompt còn lại từ phiên làm việc, không chỉ bản tóm tắt này.
 
