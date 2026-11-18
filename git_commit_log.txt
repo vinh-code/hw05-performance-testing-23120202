@@ -1,0 +1,44 @@
+commit 3036ca660f24a45df263214fc65553534e113019
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-17T23:24:37+07:00
+Subject: chore: scaffold HW05 performance testing workflow
+
+commit 431c29094bc95c9ae5e17e6ab0e259bf53355d04
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-17T23:24:37+07:00
+Subject: test: add load test plan for profile purchase flow
+
+commit 0e1a829ecd3a591c3e47c166dfb0cbeeb9244ebd
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-17T23:24:37+07:00
+Subject: test: add stress test plan for profile purchase flow
+
+commit 6a55a218ce489ddd5e926e2edd1858b08cbb24a4
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-17T23:24:37+07:00
+Subject: test: add spike test plan for profile purchase flow
+
+commit 24605a0bf206a8fe2af0aa35701c7dfb7a7285d7
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-17T23:24:37+07:00
+Subject: docs: add test design runbook and report skeleton
+
+commit 76d0595f48b3558652b552b9cb25c51ea969b419
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-17T23:26:55+07:00
+Subject: test: verify plans and model spike recovery phases
+
+commit 2a5a0bd322082b04790c63a0c5a8c7010f1b9ac6
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-18T14:12:30+07:00
+Subject: test: capture performance runs and harden failure handling
+
+commit 2ae98f2f10ccf201693ed453c50695d830441f74
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-18T14:12:30+07:00
+Subject: docs: analyze results and review AI recommendations
+
+commit bb7cc1dbc2b0caef64cfb9e965b1fa63e93f6f67
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-18T14:12:30+07:00
+Subject: feat: add reusable performance JTL review skill
