@@ -16,6 +16,15 @@ while IFS=',' read -r email password name phone address keyword; do
     continue
   fi
 
+  login_status=$(curl --silent --output /dev/null --write-out '%{http_code}' \
+    --header 'Content-Type: application/json' \
+    --data "{\"email\":\"$email\",\"password\":\"$password\"}" \
+    "$base_url/api/login")
+  if [[ "$login_status" == "200" ]]; then
+    ((existing+=1))
+    continue
+  fi
+
   payload=$(printf '{"name":"%s","email":"%s","password":"%s"}' "$name" "$email" "$password")
   response=$(curl --silent --write-out $'\n%{http_code}' \
     --header 'Content-Type: application/json' \
@@ -25,8 +34,6 @@ while IFS=',' read -r email password name phone address keyword; do
 
   if [[ "$status" == "200" ]]; then
     ((created+=1))
-  elif [[ "$status" == "500" ]]; then
-    ((existing+=1))
   else
     echo "Seed thất bại cho $email (HTTP $status)" >&2
     exit 1

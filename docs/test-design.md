@@ -19,7 +19,7 @@
 
 ## Dữ liệu
 
-CSV cung cấp tài khoản, thông tin hồ sơ và từ khóa tìm kiếm. Mỗi virtual user giữ bản sao dòng CSV được nhận ở vòng lặp đầu để tránh đổi danh tính giữa chừng. CSV được phép quay vòng nhưng các biến `vu_*` không thay đổi sau Once Only Controller.
+CSV cung cấp 500 tài khoản, thông tin hồ sơ và từ khóa tìm kiếm. Mỗi virtual user giữ bản sao dòng CSV được nhận ở vòng lặp đầu để tránh đổi danh tính giữa chừng. CSV được phép quay vòng nhưng các biến `vu_*` không thay đổi sau Once Only Controller.
 
 ## Mô hình tải ban đầu
 
@@ -40,4 +40,5 @@ CSV cung cấp tài khoản, thông tin hồ sơ và từ khóa tìm kiếm. M�
 5. Thông số thread chỉ là điểm bắt đầu. Ngưỡng ổn định phải lấy từ raw JTL và resource monitor.
 6. Backend reset database khi restart nên seed dữ liệu là bước bắt buộc và phải được ghi trong bằng chứng chạy.
 7. Spike phải có ba vùng quan sát: baseline trước spike, burst đột ngột và baseline sau spike để đánh giá phục hồi. Một thread group chỉ tăng tải rồi dừng là chưa đủ.
+8. Endurance 800 users cho thấy nếu tiếp tục workflow sau một timeout, extractor trả `NOT_FOUND` và các request sau tạo lỗi dây chuyền 400/403/404. Test plan được sửa sang `startnextloop` để mỗi vòng lặp dừng tại lỗi gốc, tránh đếm lỗi phụ như lỗi độc lập.
 

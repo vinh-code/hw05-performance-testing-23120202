@@ -61,6 +61,10 @@ for (const [label, item] of [...byLabel.entries()].sort()) {
   console.log(`${label}\t${item.elapsed.length}\t${item.failures}\t${average.toFixed(2)}\t${percentile(item.elapsed, 0.95)}`);
 }
 
+const allElapsed = rows.map((row) => Number(row[index.elapsed]));
+const totalAverage = allElapsed.reduce((sum, value) => sum + value, 0) / allElapsed.length;
+console.log(`TOTAL\t${rows.length}\t${rows.filter((row) => row[index.success] !== "true").length}\t${totalAverage.toFixed(2)}\t${percentile(allElapsed, 0.95)}`);
+
 const failures = rows.filter((row) => row[index.success] !== "true");
 console.log(`\nRequest samples: ${rows.length}`);
 console.log(`Failures: ${failures.length}`);

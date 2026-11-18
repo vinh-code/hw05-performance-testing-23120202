@@ -1,0 +1,9 @@
+started_at=2026-11-18T13:52:57+07:00
+scenario=load
+threads=300
+ramp_seconds=30
+duration_seconds=630
+backend_pid=131160
+hostname=Vinh
+finished_at=2026-11-18T14:03:35+07:00
+exit_status=0

@@ -8,4 +8,6 @@ logs/*.log
 jmeter.log
 *.zip
 .DS_Store
+__pycache__/
+*.pyc
 

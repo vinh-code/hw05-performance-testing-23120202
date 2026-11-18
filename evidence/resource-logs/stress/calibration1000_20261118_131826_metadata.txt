@@ -1,0 +1,9 @@
+started_at=2026-11-18T13:18:26+07:00
+scenario=stress
+threads=1000
+ramp_seconds=60
+duration_seconds=180
+backend_pid=22054
+hostname=Vinh
+finished_at=2026-11-18T13:21:34+07:00
+exit_status=0
