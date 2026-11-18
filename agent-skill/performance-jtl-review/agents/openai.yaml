@@ -1,0 +1,3 @@
+interface:
+  display_name: "Performance JTL Review"
+  short_description: "Analyze raw JMeter results and late-run degradation"
