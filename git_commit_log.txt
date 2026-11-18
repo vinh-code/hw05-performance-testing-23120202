@@ -42,3 +42,13 @@ commit bb7cc1dbc2b0caef64cfb9e965b1fa63e93f6f67
 Author: Phạm Quang Vinh <vinhp1546@gmail.com>
 Date: 2026-11-18T14:12:30+07:00
 Subject: feat: add reusable performance JTL review skill
+
+commit 52a4896383e41f047c23fe5e6268defb501e66b8
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-18T14:13:08+07:00
+Subject: docs: add self assessment and commit log
+
+commit ae7b1e3e2b0c5e004834102490273d8146db6426
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-18T14:13:50+07:00
+Subject: chore: add submission completeness preflight
