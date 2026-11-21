@@ -20,7 +20,9 @@ Workflow: Login → Get profile → Update profile → Search → Product detail
 | JMeter | 5.6.3 |
 | Backend | Node.js 24.18.0, Express, SQLite |
 
-JMeter và SUT chạy trên cùng máy. Vì vậy ngưỡng quan sát bao gồm cả chi phí của load generator, không phải benchmark backend cô lập. Thông số text nằm tại `evidence/hardware_spec.txt`; ảnh hardware/resource monitor cùng khung hình vẫn phải được chụp khi quay video.
+JMeter và SUT chạy trên cùng máy. Vì vậy ngưỡng quan sát bao gồm cả chi phí của load generator, không phải benchmark backend cô lập. Thông số text nằm tại `evidence/hardware_spec.txt`; ảnh hardware được chụp lại ngày 2026-11-21:
+
+![Hardware specification](../evidence/screenshots/04-hardware-spec.png)
 
 ## 2. AI-assisted design và human review
 
@@ -53,6 +55,10 @@ Chi tiết: `docs/test-design.md`.
 
 Checkout là endpoint chậm nhất: average 14.35 ms, p95 19 ms. Load 20 users còn xa giới hạn phần cứng.
 
+Ảnh evidence dưới đây được chụp live từ rerun cùng cấu hình ngày 2026-11-21, tại khoảng giây 150 khi JMeter vẫn đang chạy. Rerun có JTL/HTML/resource log riêng và không thay thế số liệu chính thức trong bảng trên.
+
+![Load live evidence](../evidence/screenshots/01-load-live.png)
+
 ## 4. Stress test
 
 - Test plan: `23120202_Stress_20261117.jmx`
@@ -74,6 +80,10 @@ Checkout là endpoint chậm nhất: average 14.35 ms, p95 19 ms. Load 20 users 
 
 Không có HTTP error trong stress ngắn. Tuy nhiên một cửa sổ full-load có average 67 ms và max 1,466 ms, cao hơn rõ rệt so với Load. Đây là degradation nhưng chưa phải crash/breaking point.
 
+Ảnh evidence dưới đây được chụp live từ rerun 1.000 users ngày 2026-11-21, tại khoảng giây 90 sau ramp-up. Rerun có JTL/HTML/resource log riêng và không thay thế số liệu chính thức trong bảng trên.
+
+![Stress live evidence](../evidence/screenshots/02-stress-live.png)
+
 ## 5. Spike test
 
 - Test plan: `23120202_Spike_20261117.jmx`
@@ -91,6 +101,10 @@ Không có HTTP error trong stress ngắn. Tuy nhiên một cửa sổ full-load
 | Settled recovery | 2,487 | 30.56 req/s | 3.51 ms | 12 ms | 36 ms | 0 |
 
 SUT không trả lỗi trong burst và trở lại gần baseline sau khoảng 10 giây. Spike làm p95 tăng từ 14 ms lên 1,084 ms nhưng không gây suy giảm kéo dài.
+
+Ảnh evidence dưới đây được chụp live từ rerun ngày 2026-11-21 tại khoảng giây 70, trong burst 1.000 users. Rerun có JTL/HTML/resource log riêng và không thay thế số liệu chính thức trong bảng trên.
+
+![Spike live evidence](../evidence/screenshots/03-spike-live.png)
 
 ## 6. Endurance threshold
 
@@ -170,7 +184,7 @@ Issue draft tại `issues/ISSUE-001-endurance-degradation.md`. Chưa tuyên bố
 ## 11. Hạn chế
 
 - Load generator và SUT dùng chung máy.
-- Resource evidence hiện có dạng text (`pidstat`, `vmstat`); ảnh cùng khung hình và video giọng nói chưa hoàn thành.
+- Resource evidence gồm log text (`pidstat`, `vmstat`) và ảnh live cùng khung hình cho Load, Stress, Spike; video giọng nói đã quay local nhưng chưa có URL YouTube Unlisted.
 - Ngưỡng chỉ được kiểm tra tại các mức rời rạc 300, 500 và 800 users.
 - Nguyên nhân degradation chưa được xác nhận bằng profiler hoặc tracing SQLite.
 

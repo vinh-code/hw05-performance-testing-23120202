@@ -1,0 +1,9 @@
+started_at=2026-11-21T23:15:49+07:00
+scenario=spike
+threads=1000
+ramp_seconds=2
+duration_seconds=180
+backend_pid=124489
+hostname=Vinh
+finished_at=2026-11-21T23:18:52+07:00
+exit_status=0
