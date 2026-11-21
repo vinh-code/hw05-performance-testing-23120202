@@ -52,3 +52,13 @@ commit ae7b1e3e2b0c5e004834102490273d8146db6426
 Author: Phạm Quang Vinh <vinhp1546@gmail.com>
 Date: 2026-11-18T14:13:50+07:00
 Subject: chore: add submission completeness preflight
+
+commit f17d7e7a496814bd2f95c2c1c485acd14b791be7
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-18T14:13:58+07:00
+Subject: docs: refresh commit log after preflight
+
+commit 4f962c2ef3dcd4b7197613b12e53434383694d3c
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-21T23:24:59+07:00
+Subject: test: add live performance evidence reruns
