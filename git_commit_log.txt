@@ -87,3 +87,8 @@ commit c80ff5d9129d1a68cc40ddfc2d54fe545b3196ee
 Author: Phạm Quang Vinh <vinhp1546@gmail.com>
 Date: 2026-11-22T11:56:27+07:00
 Subject: docs: record public repository and performance issue
+
+commit c01497a245354b461f14a59f233590adacfdbbd9
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-22T12:54:13+07:00
+Subject: docs: complete AI audit report from course template
