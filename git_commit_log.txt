@@ -118,3 +118,8 @@ Author: Phạm Quang Vinh <vinhp1546@gmail.com>
 Date: 2026-11-22T13:40:59+07:00
 Subject: docs: record verified checkout and authorization issues
 
+commit cfae141038498b68def78798d5d60851e3afd0d0
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-22T13:53:44+07:00
+Subject: fix: embed local evidence images in report PDF
+
