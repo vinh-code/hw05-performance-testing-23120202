@@ -22,6 +22,8 @@ Workflow: Login → Get profile → Update profile → Search → Product detail
 
 JMeter và SUT chạy trên cùng máy. Vì vậy ngưỡng quan sát bao gồm cả chi phí của load generator, không phải benchmark backend cô lập. Thông số text nằm tại `evidence/hardware_spec.txt`; ảnh hardware được chụp lại ngày 2026-11-21:
 
+Demo có giọng nói tiếng Việt và JMeter/resource monitor cùng khung hình: [YouTube Unlisted](https://youtu.be/tAsw4BRn0uI).
+
 ![Hardware specification](../evidence/screenshots/04-hardware-spec.png)
 
 ## 2. AI-assisted design và human review
@@ -184,7 +186,7 @@ Issue draft tại `issues/ISSUE-001-endurance-degradation.md`. Chưa tuyên bố
 ## 11. Hạn chế
 
 - Load generator và SUT dùng chung máy.
-- Resource evidence gồm log text (`pidstat`, `vmstat`) và ảnh live cùng khung hình cho Load, Stress, Spike; video giọng nói đã quay local nhưng chưa có URL YouTube Unlisted.
+- Resource evidence gồm log text (`pidstat`, `vmstat`) và ảnh live cùng khung hình cho Load, Stress, Spike; video giọng nói đã được đăng ở chế độ YouTube Unlisted.
 - Ngưỡng chỉ được kiểm tra tại các mức rời rạc 300, 500 và 800 users.
 - Nguyên nhân degradation chưa được xác nhận bằng profiler hoặc tracing SQLite.
 

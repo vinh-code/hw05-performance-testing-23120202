@@ -5,7 +5,7 @@
 - Workflow: Flow 4 – Cập nhật hồ sơ → Mua
 - SUT: EShop backend API
 - Công cụ chính: Apache JMeter 5.6.3
-- Trạng thái hiện tại: đã có run chính thức, ảnh live, hardware evidence và PDF; còn thiếu URL video, public repository và GitHub issue đã publish
+- Trạng thái hiện tại: đã có run chính thức, ảnh live, hardware evidence, PDF và video; còn thiếu public repository và GitHub issue đã publish
 
 ## Workflow API
 
@@ -43,7 +43,7 @@ node server.js
 | Spike plan | Đã chạy baseline 20 + burst 1,000 users |
 | Endurance | Đã xác nhận 300 users / khoảng 457 sustained req/s trong 10 phút |
 | Resource screenshots | Đã chụp live cho Load, Stress, Spike và hardware trong `evidence/screenshots/` |
-| Demo video | Đã quay local; chờ upload YouTube Unlisted và điền URL |
+| Demo video | [YouTube Unlisted](https://youtu.be/tAsw4BRn0uI) |
 | AI analysis từ raw JTL | Đã thực hiện và human review |
 
 Không điền số liệu hiệu năng nếu chưa có raw `.jtl` và bằng chứng tài nguyên tương ứng.
@@ -59,12 +59,12 @@ Không điền số liệu hiệu năng nếu chưa có raw `.jtl` và bằng ch
 | Spike | Baseline 20 + burst 1,000; burst p95 1,084 ms; settled recovery p95 12 ms |
 | Endurance threshold | Highest verified stable tested level: 300 users, khoảng 457 sustained req/s trong 10 phút |
 | Performance issue | 1 issue draft, chưa đăng GitHub |
-| Demo video | Chưa có link |
+| Demo video | [https://youtu.be/tAsw4BRn0uI](https://youtu.be/tAsw4BRn0uI) |
 | Public repository | Chưa publish |
 
 ## Provisional self-assessment
 
-Điểm dưới đây phản ánh trạng thái hiện tại, vẫn trừ phần URL video và public links còn thiếu.
+Điểm dưới đây phản ánh trạng thái hiện tại, vẫn trừ phần public repository và GitHub issue còn thiếu.
 
 | No. | Criteria | Max | Provisional |
 |---:|---|---:|---:|
