@@ -52,6 +52,13 @@ Các rerun dùng database sạch và seed lại 1.100 test users trước mỗi 
 - Nội dung: Ubuntu/kernel, model máy, CPU/core/thread/cache, RAM/swap, physical storage, Java, Node.js và JMeter 5.6.3.
 - Bảng text đầy đủ: `../hardware_spec.txt`.
 
+### Endurance degradation issue
+
+- Ảnh: `05-endurance-degradation.png`.
+- Nội dung: so sánh các cửa sổ 30 giây cuối của Endurance 500 và 800 users.
+- Nguồn: raw JTL được phân tích bằng `agent-skill/performance-jtl-review/scripts/analyze_jtl_windows.mjs`.
+- Mục đích: evidence cho GitHub Issue về throughput collapse và p95/error tăng cuối sustained load.
+
 ## Lưu ý về tính xác thực
 
 Ảnh được lưu tự động trong lúc process JMeter còn hoạt động. Không ghép ảnh và không dùng kết quả demo video. Các raw JTL/HTML rerun được giữ cục bộ vì `.gitignore` mặc định loại chúng khỏi Git; bộ raw JTL/HTML chính thức ngày 2026-11-18 vẫn là bộ được chọn để nộp và phân tích trong báo cáo.
