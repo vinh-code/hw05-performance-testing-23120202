@@ -62,3 +62,28 @@ commit 4f962c2ef3dcd4b7197613b12e53434383694d3c
 Author: Phạm Quang Vinh <vinhp1546@gmail.com>
 Date: 2026-11-21T23:24:59+07:00
 Subject: test: add live performance evidence reruns
+
+commit af7ddf71a9803352d60c393e1fb37ae2183945ee
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-21T23:25:14+07:00
+Subject: docs: refresh commit log after live evidence
+
+commit 9fc20c45033f19970207bc6939bd3ecff4a171a6
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-22T11:52:35+07:00
+Subject: test: add selected official JTL and HTML reports
+
+commit d4f2ed673cc1714dc3d02100b10b178c938cc667
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-22T11:53:24+07:00
+Subject: docs: add unlisted performance demo video
+
+commit 490b87b47c2963107ecde50659836bcb5e0b49ec
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-22T11:55:26+07:00
+Subject: docs: add endurance degradation issue evidence
+
+commit c80ff5d9129d1a68cc40ddfc2d54fe545b3196ee
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-22T11:56:27+07:00
+Subject: docs: record public repository and performance issue
