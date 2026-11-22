@@ -1,0 +1,19 @@
+HW05 live API verification — 2026-11-22
+SUT: http://localhost:3000, clean database
+
+Scenario
+1. Login as user A and create order 1.
+2. GET /api/orders/1 without an Authorization header.
+3. Register/login as user B and GET /api/orders/1 with user B's token.
+
+Observed result
+unauthenticated_order_detail_http=200
+unauthenticated_body={"id":1,"user_id":2,"total_amount":1,"status":"pending"}
+other_user_order_detail_http=200
+other_user_body={"id":1,"user_id":2,"total_amount":1,"status":"pending"}
+
+Expected result (sut/api_specification.md, Cart & Orders)
+- Requests without a Bearer token return 401 Unauthorized.
+- A user cannot read another user's order.
+
+Result: REPRODUCED

@@ -1,0 +1,20 @@
+HW05 live API verification — 2026-11-22
+SUT: http://localhost:3000, clean database
+
+Scenario
+1. Login as test@eshop.com.
+2. Add one iPhone 15 Pro Max with listed price 30,000,000 to the cart.
+3. POST /api/checkout with total_amount=1.
+4. GET /api/cart after successful checkout.
+
+Observed result
+cart_before_count=1
+checkout_order_id=1
+checkout_accepted_total=1
+cart_after_count=1
+
+Expected result (sut/README.md, FR-08)
+- Backend recalculates the total from the cart and rejects a client-tampered total.
+- Cart is empty after successful checkout.
+
+Result: REPRODUCED
