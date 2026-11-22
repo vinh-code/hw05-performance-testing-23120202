@@ -123,3 +123,13 @@ Author: Phạm Quang Vinh <vinhp1546@gmail.com>
 Date: 2026-11-22T13:53:44+07:00
 Subject: fix: embed local evidence images in report PDF
 
+commit b7a3bc8849f7e437dcf167c4e2da54d4ed8947ed
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-22T14:07:04+07:00
+Subject: docs: record student self-assessment of 100
+
+commit 4644e13b90e7abe9bd707a91c1b01a3646e8dd01
+Author: Phạm Quang Vinh <vinhp1546@gmail.com>
+Date: 2026-11-22T14:10:42+07:00
+Subject: docs: simplify self-assessment wording
+
