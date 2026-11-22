@@ -2,6 +2,7 @@
 import argparse
 import html
 import pathlib
+import re
 import subprocess
 import tempfile
 
@@ -22,7 +23,25 @@ code { font-family: 'DejaVu Sans Mono', monospace; background: #eef2f6; padding:
 pre { background: #eef2f6; border-left: 4px solid #2b6cb0; padding: 10px; white-space: pre-wrap; break-inside: avoid; }
 blockquote { border-left: 4px solid #d69e2e; background: #fff8e1; margin: 12px 0; padding: 6px 12px; }
 a { color: #1a5a96; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; margin: 12px auto 18px; break-inside: avoid; }
 """
+
+
+IMAGE_PATTERN = re.compile(r"(!\[[^\]]*\]\()([^\s)]+)(\))")
+
+
+def resolve_local_images(source_text: str, source_file: pathlib.Path) -> str:
+    """Make local Markdown images loadable from the temporary HTML file."""
+
+    def replace(match: re.Match[str]) -> str:
+        target = match.group(2)
+        if "://" in target or target.startswith("data:"):
+            return match.group(0)
+
+        image_path = (source_file.parent / target).resolve()
+        return f"{match.group(1)}{image_path.as_uri()}{match.group(3)}"
+
+    return IMAGE_PATTERN.sub(replace, source_text)
 
 
 def main() -> None:
@@ -31,8 +50,10 @@ def main() -> None:
     parser.add_argument("target", type=pathlib.Path)
     args = parser.parse_args()
 
-    markdown = mistune.create_markdown(plugins=["table"])
+    renderer = mistune.HTMLRenderer(allow_harmful_protocols=True)
+    markdown = mistune.create_markdown(renderer=renderer, plugins=["table"])
     source_text = args.source.read_text(encoding="utf-8")
+    source_text = resolve_local_images(source_text, args.source.resolve())
     body = markdown(source_text)
     title = html.escape(args.source.stem.replace("_", " ").title())
     document = f"""<!doctype html><html lang="vi"><head><meta charset="utf-8">
