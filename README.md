@@ -62,9 +62,9 @@ Không điền số liệu hiệu năng nếu chưa có raw `.jtl` và bằng ch
 | Demo video | [https://youtu.be/tAsw4BRn0uI](https://youtu.be/tAsw4BRn0uI) |
 | Public repository | [vinh-code/hw05-performance-testing-23120202](https://github.com/vinh-code/hw05-performance-testing-23120202) |
 
-## Self-assessment — theo điểm sinh viên xác nhận
+## Self-assessment
 
-Sinh viên Phạm Quang Vinh xác nhận mức tự đánh giá 100/100 ngày 22/11/2026 sau khi hoàn thiện các evidence và public links bắt buộc.
+Self-assessed grade: **100/100**.
 
 | No. | Criteria | Max | Self-assessed |
 |---:|---|---:|---:|
