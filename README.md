@@ -62,17 +62,17 @@ Không điền số liệu hiệu năng nếu chưa có raw `.jtl` và bằng ch
 | Demo video | [https://youtu.be/tAsw4BRn0uI](https://youtu.be/tAsw4BRn0uI) |
 | Public repository | [vinh-code/hw05-performance-testing-23120202](https://github.com/vinh-code/hw05-performance-testing-23120202) |
 
-## Provisional self-assessment
+## Self-assessment — theo điểm sinh viên xác nhận
 
-Điểm dưới đây là tự đánh giá bảo thủ dựa trên chất lượng nội dung; các evidence và public links bắt buộc đã được bổ sung.
+Sinh viên Phạm Quang Vinh xác nhận mức tự đánh giá 100/100 ngày 22/11/2026 sau khi hoàn thiện các evidence và public links bắt buộc.
 
-| No. | Criteria | Max | Provisional |
+| No. | Criteria | Max | Self-assessed |
 |---:|---|---:|---:|
-| 1 | Task 1 – Load testing | 30 | 24 |
-| 2 | Task 1 – Stress testing | 20 | 16 |
-| 3 | Task 1 – Spike testing | 20 | 16 |
-| 4 | Task 2 – AI analysis and misinterpretation hunt | 10 | 9 |
-| 5 | Task 3 – Continuous Performance Testing proposal | 10 | 9 |
-| 6 | Agent Skill | 10 | 9 |
-| | **Total** | **100** | **83** |
+| 1 | Task 1 – Load testing | 30 | 30 |
+| 2 | Task 1 – Stress testing | 20 | 20 |
+| 3 | Task 1 – Spike testing | 20 | 20 |
+| 4 | Task 2 – AI analysis and misinterpretation hunt | 10 | 10 |
+| 5 | Task 3 – Continuous Performance Testing proposal | 10 | 10 |
+| 6 | Agent Skill | 10 | 10 |
+| | **Total** | **100** | **100** |
 
