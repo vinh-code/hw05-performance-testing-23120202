@@ -59,6 +59,20 @@ Các rerun dùng database sạch và seed lại 1.100 test users trước mỗi 
 - Nguồn: raw JTL được phân tích bằng `agent-skill/performance-jtl-review/scripts/analyze_jtl_windows.mjs`.
 - Mục đích: evidence cho GitHub Issue về throughput collapse và p95/error tăng cuối sustained load.
 
+### Checkout integrity issue
+
+- Ảnh: `06-checkout-integrity.png`.
+- Nội dung: checkout chấp nhận `total_amount=1` cho sản phẩm có giá 30.000.000 và giỏ vẫn còn một item sau khi checkout thành công.
+- Raw verification: `../api-checks/checkout-integrity-20261122.txt`.
+- GitHub: [Issue #2](https://github.com/vinh-code/hw05-performance-testing-23120202/issues/2).
+
+### Order authorization issue
+
+- Ảnh: `07-order-authorization.png`.
+- Nội dung: Order Detail trả HTTP 200 khi không có token và khi dùng token của người dùng khác.
+- Raw verification: `../api-checks/order-authorization-20261122.txt`.
+- GitHub: [Issue #3](https://github.com/vinh-code/hw05-performance-testing-23120202/issues/3).
+
 ## Lưu ý về tính xác thực
 
 Ảnh được lưu tự động trong lúc process JMeter còn hoạt động. Không ghép ảnh và không dùng kết quả demo video. Các raw JTL/HTML rerun được giữ cục bộ vì `.gitignore` mặc định loại chúng khỏi Git; bộ raw JTL/HTML chính thức ngày 2026-11-18 vẫn là bộ được chọn để nộp và phân tích trong báo cáo.

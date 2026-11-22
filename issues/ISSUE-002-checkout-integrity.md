@@ -1,5 +1,7 @@
 # [BUG] Checkout accepts a client-tampered total and leaves the cart uncleared
 
+Published as [GitHub Issue #2](https://github.com/vinh-code/hw05-performance-testing-23120202/issues/2).
+
 ## Environment
 
 - EShop backend, Node.js + Express + SQLite

@@ -1,1 +1,3 @@
 https://github.com/vinh-code/hw05-performance-testing-23120202/issues/1
+https://github.com/vinh-code/hw05-performance-testing-23120202/issues/2
+https://github.com/vinh-code/hw05-performance-testing-23120202/issues/3

@@ -58,7 +58,7 @@ Không điền số liệu hiệu năng nếu chưa có raw `.jtl` và bằng ch
 | Stress | Đến 1,000 users, 220,812 samples, p95 79 ms, 0 lỗi |
 | Spike | Baseline 20 + burst 1,000; burst p95 1,084 ms; settled recovery p95 12 ms |
 | Endurance threshold | Highest verified stable tested level: 300 users, khoảng 457 sustained req/s trong 10 phút |
-| Performance issue | [GitHub Issue #1](https://github.com/vinh-code/hw05-performance-testing-23120202/issues/1) |
+| Verified issues | 3: [performance degradation #1](https://github.com/vinh-code/hw05-performance-testing-23120202/issues/1), [checkout integrity #2](https://github.com/vinh-code/hw05-performance-testing-23120202/issues/2), [order authorization #3](https://github.com/vinh-code/hw05-performance-testing-23120202/issues/3) |
 | Demo video | [https://youtu.be/tAsw4BRn0uI](https://youtu.be/tAsw4BRn0uI) |
 | Public repository | [vinh-code/hw05-performance-testing-23120202](https://github.com/vinh-code/hw05-performance-testing-23120202) |
 

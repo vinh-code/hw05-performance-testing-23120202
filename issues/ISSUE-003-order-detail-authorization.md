@@ -1,5 +1,7 @@
 # [SECURITY] Order detail is accessible without authentication and across users
 
+Published as [GitHub Issue #3](https://github.com/vinh-code/hw05-performance-testing-23120202/issues/3).
+
 ## Environment
 
 - EShop backend, Node.js + Express + SQLite

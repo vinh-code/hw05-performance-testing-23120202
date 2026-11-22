@@ -22,7 +22,8 @@ Workflow: Login → Get profile → Update profile → Search → Product detail
 
 JMeter và SUT chạy trên cùng máy. Vì vậy ngưỡng quan sát bao gồm cả chi phí của load generator, không phải benchmark backend cô lập. Thông số text nằm tại `evidence/hardware_spec.txt`; ảnh hardware được chụp lại ngày 2026-11-21:
 
-Demo có giọng nói tiếng Việt và JMeter/resource monitor cùng khung hình: [YouTube Unlisted](https://youtu.be/tAsw4BRn0uI).
+- **Public repository:** [https://github.com/vinh-code/hw05-performance-testing-23120202](https://github.com/vinh-code/hw05-performance-testing-23120202)
+- **Demo video:** [YouTube Unlisted](https://youtu.be/tAsw4BRn0uI) (có giọng nói tiếng Việt, JMeter và resource monitor cùng khung hình).
 
 ![Hardware specification](../evidence/screenshots/04-hardware-spec.png)
 
@@ -181,7 +182,17 @@ Suite ngắn chạy trên pull request; endurance chạy theo lịch hoặc trư
 
 ## 10. Bugs/performance issues
 
-Performance issue đã được đăng tại [GitHub Issue #1 – Throughput collapses late in sustained checkout workload](https://github.com/vinh-code/hw05-performance-testing-23120202/issues/1). Evidence trực quan nằm tại `evidence/screenshots/05-endurance-degradation.png`; nội dung nguồn được lưu tại `issues/ISSUE-001-endurance-degradation.md`.
+Mã nguồn và kết quả kiểm thử được công khai tại repository: [vinh-code/hw05-performance-testing-23120202](https://github.com/vinh-code/hw05-performance-testing-23120202).
+
+Ba issue độc lập đã được tái hiện và đăng công khai:
+
+| Issue | Phân loại | Kết quả tái hiện | Evidence |
+|---|---|---|---|
+| [#1 – Throughput collapses late in sustained checkout workload](https://github.com/vinh-code/hw05-performance-testing-23120202/issues/1) | Performance | Endurance 500 users suy giảm cuối run; 800 users đạt p95 4.540 ms và 1,492% lỗi ở cửa sổ cuối | `05-endurance-degradation.png` và raw JTL |
+| [#2 – Checkout accepts a client-tampered total and leaves the cart uncleared](https://github.com/vinh-code/hw05-performance-testing-23120202/issues/2) | Functional / integrity | Backend chấp nhận `total_amount=1` và cart còn một item sau checkout | `06-checkout-integrity.png` và raw API check |
+| [#3 – Order detail is accessible without authentication and across users](https://github.com/vinh-code/hw05-performance-testing-23120202/issues/3) | Security / authorization | Không token và token user khác đều đọc được order với HTTP 200 | `07-order-authorization.png` và raw API check |
+
+Load, Stress, Spike và Endurance 300 không tạo thêm issue HTTP: các run này đều có error rate 0%. Issue #2 và #3 được phát hiện khi bổ sung negative/invariant checks vì test plan hiệu năng ban đầu chỉ kiểm tra success path.
 
 ## 11. Hạn chế
 
