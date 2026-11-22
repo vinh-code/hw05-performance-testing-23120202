@@ -5,7 +5,7 @@
 - Workflow: Flow 4 – Cập nhật hồ sơ → Mua
 - SUT: EShop backend API
 - Công cụ chính: Apache JMeter 5.6.3
-- Trạng thái hiện tại: đã có run chính thức, ảnh live, hardware evidence, PDF và video; còn thiếu public repository và GitHub issue đã publish
+- Trạng thái hiện tại: đã có run chính thức, ảnh live, hardware evidence, PDF, video, public repository và GitHub issue
 
 ## Workflow API
 
@@ -58,13 +58,13 @@ Không điền số liệu hiệu năng nếu chưa có raw `.jtl` và bằng ch
 | Stress | Đến 1,000 users, 220,812 samples, p95 79 ms, 0 lỗi |
 | Spike | Baseline 20 + burst 1,000; burst p95 1,084 ms; settled recovery p95 12 ms |
 | Endurance threshold | Highest verified stable tested level: 300 users, khoảng 457 sustained req/s trong 10 phút |
-| Performance issue | 1 issue draft, chưa đăng GitHub |
+| Performance issue | [GitHub Issue #1](https://github.com/vinh-code/hw05-performance-testing-23120202/issues/1) |
 | Demo video | [https://youtu.be/tAsw4BRn0uI](https://youtu.be/tAsw4BRn0uI) |
-| Public repository | Chưa publish |
+| Public repository | [vinh-code/hw05-performance-testing-23120202](https://github.com/vinh-code/hw05-performance-testing-23120202) |
 
 ## Provisional self-assessment
 
-Điểm dưới đây phản ánh trạng thái hiện tại, vẫn trừ phần public repository và GitHub issue còn thiếu.
+Điểm dưới đây là tự đánh giá bảo thủ dựa trên chất lượng nội dung; các evidence và public links bắt buộc đã được bổ sung.
 
 | No. | Criteria | Max | Provisional |
 |---:|---|---:|---:|

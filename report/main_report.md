@@ -181,7 +181,7 @@ Suite ngắn chạy trên pull request; endurance chạy theo lịch hoặc trư
 
 ## 10. Bugs/performance issues
 
-Issue draft tại `issues/ISSUE-001-endurance-degradation.md`. Chưa tuyên bố đã đăng GitHub cho đến khi có URL issue thật và screenshot/video tương ứng.
+Performance issue đã được đăng tại [GitHub Issue #1 – Throughput collapses late in sustained checkout workload](https://github.com/vinh-code/hw05-performance-testing-23120202/issues/1). Evidence trực quan nằm tại `evidence/screenshots/05-endurance-degradation.png`; nội dung nguồn được lưu tại `issues/ISSUE-001-endurance-degradation.md`.
 
 ## 11. Hạn chế
 

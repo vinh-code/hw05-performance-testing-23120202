@@ -2,7 +2,7 @@
 
 ## Status
 
-Draft only — not yet published to GitHub.
+Published as [GitHub Issue #1](https://github.com/vinh-code/hw05-performance-testing-23120202/issues/1).
 
 ## Environment
 
@@ -32,6 +32,7 @@ At a declared sustainable load, throughput and p95 should remain within the stat
 
 ## Evidence
 
+- `evidence/screenshots/05-endurance-degradation.png`
 - `results/load/endurance500_20261118_134059_20261118_134059.jtl`
 - `results/load/endurance_20261118_132746_20261118_132746.jtl`
 - Matching HTML reports and `evidence/resource-logs/load/`
